@@ -8,60 +8,126 @@ import CTASection from "@/components/CTASection";
 
 const filters = ["All", "Content", "Website", "AI Creative", "AI Products"];
 
-const projects = [
+type Project = {
+  id: number;
+  title: string;
+  category: string;
+  tag: string;
+  result: string;
+  description: string;
+  imageSrc?: string;
+  imageBg?: string;
+  videoId?: string;
+};
+
+const projects: Project[] = [
   {
     id: 1,
-    title: "Luxe Fashion Co.",
+    title: "Ravisbook.ai — Instagram Growth",
     category: "Content Marketing",
     tag: "Content",
-    result: "18K organic followers in 4 months",
+    result: "0 → 54.7K followers",
     description:
-      "Full Instagram strategy, content calendar, Reels production, and community management for a premium fashion label.",
-  },
-  {
-    id: 2,
-    title: "TechVenture Platform",
-    category: "Website Development",
-    tag: "Website",
-    result: "3x more leads in 60 days",
-    description:
-      "Complete Webflow rebuild with conversion-focused landing pages, SEO structure, and integrated lead capture.",
-  },
-  {
-    id: 3,
-    title: "Glow Skincare",
-    category: "AI Creative Studio",
-    tag: "AI Creative",
-    result: "200 product photos in 10 days",
-    description:
-      "AI-generated product photography for an e-commerce catalog — studio-quality visuals without a single photoshoot.",
-  },
-  {
-    id: 4,
-    title: "ScheduleFlow PWA",
-    category: "AI Products & Automation",
-    tag: "AI Products",
-    result: "80% reduction in manual scheduling",
-    description:
-      "Custom booking platform PWA with AI-powered scheduling, notifications, and client management built from scratch.",
+      "Built a content strategy for Ravi — a digital creator in the AI & Tech space — that took his Instagram from scratch to 54.7K followers through AI-powered content planning, production, and distribution.",
+    imageSrc: "/clients/casestudies/ravisbook-insta.png",
+    imageBg: "#000000",
   },
   {
     id: 5,
-    title: "FitLife Academy",
+    title: "Dr Venkat Nag — Personal Brand Growth",
     category: "Content Marketing",
     tag: "Content",
-    result: "50K YouTube subscribers in 6 months",
+    result: "15.1K followers & 933 posts",
     description:
-      "YouTube Shorts strategy, scripting, and thumbnail design that turned a fitness brand into a content powerhouse.",
+      "Scaled the personal brand of Dr Venkat Nag — a leading Prosthodontist, Dental Implant Coach, and inventor of TPPHIL & ALL TILT® — building a content engine across Instagram that established him as a top voice in implant dentistry.",
+    imageSrc: "/clients/casestudies/dr-venkat-nag-insta.png",
+    imageBg: "#000000",
   },
   {
     id: 6,
-    title: "Aurelia Jewels",
+    title: "Sutra India — Heritage Fashion Brand",
+    category: "Content Marketing",
+    tag: "Content",
+    result: "Brand launch & content strategy",
+    description:
+      "Crafted the content strategy and Instagram presence for Sutra India — a handloom and ethnic wear brand celebrating India's heritage. From storytelling to visual identity, we built a digital foundation rooted in artisan craftsmanship.",
+    imageSrc: "/clients/casestudies/sutra-insta.png",
+    imageBg: "#000000",
+  },
+  {
+    id: 7,
+    title: "Pragee — Modern Western Wear",
+    category: "Content Marketing",
+    tag: "Content",
+    result: "Brand identity & social launch",
+    description:
+      "Developed the brand positioning and content strategy for Pragee — a minimal, globally-inspired western wear label. Built their Instagram from the ground up with a cohesive visual language for their Lumière '25 signature collection launch.",
+    imageSrc: "/clients/casestudies/pragee-insta.png",
+    imageBg: "#000000",
+  },
+  {
+    id: 2,
+    title: "Institute for Dental Implantology — Website Redesign",
     category: "Website Development",
     tag: "Website",
-    result: "40% increase in lead submissions",
+    result: "WordPress → Webflow migration",
     description:
-      "Shopify store design and development with custom product pages, lookbooks, and a seamless checkout flow.",
+      "Migrated IDI from a sluggish WordPress site to a modern Webflow build — responsive design, faster load times, integrated payments, and intuitive navigation that drove more program enquiries.",
+    imageSrc: "/clients/casestudies/idi-website.webp",
+    imageBg: "#000000",
+  },
+  {
+    id: 9,
+    title: "OnLoop — SaaS Website Redesign",
+    category: "Website Development",
+    tag: "Website",
+    result: "Delivered in 30 days",
+    description:
+      "Redesigned and rebuilt OnLoop's website in Webflow — complete with LinkedIn SSO integration, dynamic Lottie animations, custom CMS, and a Finsweet-powered slider — all delivered within a 30-day deadline.",
+    imageSrc: "/clients/casestudies/onloop-website.webp",
+    imageBg: "#000000",
+  },
+  {
+    id: 10,
+    title: "Wheedle.io — AI Agency Website",
+    category: "Website Development",
+    tag: "Website",
+    result: "Increased leads & traffic in 1 month",
+    description:
+      "Built the digital identity for Wheedle.io — an AI solutions agency serving enterprise clients. From brand strategy and logo system to a sleek Webflow build, the site drove a significant increase in leads and traffic within the first month.",
+    imageSrc: "/clients/casestudies/wheedle-website.webp",
+    imageBg: "#000000",
+  },
+  {
+    id: 3,
+    title: "Interactive Photo Avatar — Knowledge Base AI",
+    category: "AI Creative Studio",
+    tag: "AI Creative",
+    result: "AI-powered conversational avatar",
+    description:
+      "Built an interactive AI avatar that turns a static photo into an animated character capable of answering questions from a custom knowledge base — a conversational AI experience your audience can interact with.",
+    videoId: "hh1kPU8Zfxg",
+  },
+  {
+    id: 8,
+    title: "AI-Generated Ad Commercial",
+    category: "AI Creative Studio",
+    tag: "AI Creative",
+    result: "Fully AI-produced video ad",
+    description:
+      "Produced a complete ad commercial using AI — from concept to final render. Bold visuals, dramatic effects, and striking colours designed to stop the scroll and capture attention at scale.",
+    videoId: "H8JnmabeQlU",
+  },
+  {
+    id: 4,
+    title: "Mark My Zone — Operations Dashboard",
+    category: "AI Products & Automation",
+    tag: "AI Products",
+    result: "50% operational time saved",
+    description:
+      "Built a custom admin dashboard that replaced Excel sheets and WhatsApp chaos. The internal team now manages 170+ rental and sales properties in one place — cutting operational time by 50%.",
+    imageSrc: "/clients/casestudies/mmz-dashboard.png",
+    imageBg: "#f5f5f7",
   },
 ];
 
@@ -124,8 +190,31 @@ export default function WorkPageContent() {
                   className="bg-[var(--q-card-bg)] border border-[var(--q-card-border)] rounded-2xl overflow-hidden"
                   style={{ boxShadow: "var(--q-card-shadow)" }}
                 >
-                  {/* Image Placeholder */}
-                  <div className="h-[180px] sm:h-[220px] w-full bg-[var(--q-divider)]" />
+                  {/* Media */}
+                  <div
+                    className="h-[220px] sm:h-[280px] w-full overflow-hidden flex items-center justify-center"
+                    style={{ backgroundColor: project.imageBg || "var(--q-divider)" }}
+                  >
+                    {project.videoId ? (
+                      <div className="relative h-full w-full overflow-hidden">
+                        <iframe
+                          src={`https://www.youtube-nocookie.com/embed/${project.videoId}?rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&color=white&playsinline=1&loop=1&playlist=${project.videoId}&autoplay=1&mute=1`}
+                          title={project.title}
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                          className="absolute inset-0 h-[110%] w-[110%] -top-[5%] -left-[5%]"
+                        />
+                      </div>
+                    ) : project.imageSrc ? (
+                      <img
+                        src={project.imageSrc}
+                        alt={project.title}
+                        className="h-full w-full object-contain"
+                      />
+                    ) : (
+                      <div className="h-full w-full bg-[var(--q-divider)]" />
+                    )}
+                  </div>
                   {/* Content */}
                   <div className="p-5 sm:p-6 flex flex-col gap-3">
                     <span className="inline-block w-fit text-xs font-bold tracking-[1.5px] uppercase text-[#3B6BF5] bg-[var(--q-badge-bg)] px-3 py-1 rounded-full">

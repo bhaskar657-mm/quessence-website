@@ -9,6 +9,14 @@ import { useScrollProgress } from '@/components/ui/use-scroll';
 import { ButtonColorful } from '@/components/ui/button-colorful';
 import { useTheme } from 'next-themes';
 import SkyToggle from '@/components/ui/sky-toggle';
+import { ChevronDown, Megaphone, Globe, Sparkles, Cpu } from 'lucide-react';
+
+const serviceLinks = [
+	{ label: 'Content Marketing', href: '/content-marketing', icon: Megaphone },
+	{ label: 'Website Development', href: '/website-development', icon: Globe },
+	{ label: 'AI Creative Studio', href: '/ai-creative-studio', icon: Sparkles },
+	{ label: 'AI Products & Automation', href: '/ai-products-automation', icon: Cpu },
+];
 
 function lerp(a: number, b: number, t: number) {
 	return a + (b - a) * t;
@@ -37,8 +45,9 @@ export function Header() {
 
 	const links = [
 		{ label: 'About', href: '/about' },
-		{ label: 'Services', href: '/#services' },
+		{ label: 'Services', href: '/#services', hasDropdown: true },
 		{ label: 'Work', href: '/work' },
+		{ label: 'Blog', href: '/blog' },
 		{ label: 'Contact', href: '/contact' },
 	];
 
@@ -118,18 +127,47 @@ export function Header() {
 							/>
 						</Link>
 						<div className="hidden items-center gap-1 md:flex">
-							{links.map((link) => (
-								<Link
-									key={link.label}
-									className={cn(
-										buttonVariants({ variant: 'ghost' }),
-										'text-[var(--q-nav-link-color)] hover:text-[var(--q-nav-link-hover)] hover:bg-[var(--q-nav-link-hover-bg)]'
-									)}
-									href={link.href}
-								>
-									{link.label}
-								</Link>
-							))}
+							{links.map((link) =>
+								link.hasDropdown ? (
+									<div key={link.label} className="relative group">
+										<Link
+											className={cn(
+												buttonVariants({ variant: 'ghost' }),
+												'text-[var(--q-nav-link-color)] hover:text-[var(--q-nav-link-hover)] hover:bg-[var(--q-nav-link-hover-bg)] gap-1'
+											)}
+											href={link.href}
+										>
+											{link.label}
+											<ChevronDown className="w-3.5 h-3.5 transition-transform group-hover:rotate-180" />
+										</Link>
+										<div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200 absolute top-full left-1/2 -translate-x-1/2 pt-2">
+											<div className="bg-[var(--q-card-bg)] border border-[var(--q-card-border)] rounded-xl p-2 min-w-[240px]" style={{ boxShadow: 'var(--q-card-shadow)' }}>
+												{serviceLinks.map((service) => (
+													<Link
+														key={service.href}
+														href={service.href}
+														className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-[var(--q-body)] hover:bg-[var(--q-badge-bg)] hover:text-[var(--q-heading)] transition-colors"
+													>
+														<service.icon className="w-4 h-4 text-[#3B6BF5] shrink-0" />
+														{service.label}
+													</Link>
+												))}
+											</div>
+										</div>
+									</div>
+								) : (
+									<Link
+										key={link.label}
+										className={cn(
+											buttonVariants({ variant: 'ghost' }),
+											'text-[var(--q-nav-link-color)] hover:text-[var(--q-nav-link-hover)] hover:bg-[var(--q-nav-link-hover-bg)]'
+										)}
+										href={link.href}
+									>
+										{link.label}
+									</Link>
+								)
+							)}
 
 							{/* Theme toggle */}
 							<SkyToggle />
@@ -175,19 +213,35 @@ export function Header() {
 						'flex h-full w-full flex-col justify-between gap-y-2 p-6',
 					)}
 				>
-					<div className="grid gap-y-2">
+					<div className="grid gap-y-1">
 						{links.map((link) => (
-							<Link
-								key={link.label}
-								className={cn(
-									buttonVariants({ variant: 'ghost', className: 'justify-start' }),
-									'text-[var(--q-nav-link-color)] hover:text-[var(--q-nav-link-hover)] hover:bg-[var(--q-nav-link-hover-bg)]'
+							<React.Fragment key={link.label}>
+								<Link
+									className={cn(
+										buttonVariants({ variant: 'ghost', className: 'justify-start' }),
+										'text-[var(--q-nav-link-color)] hover:text-[var(--q-nav-link-hover)] hover:bg-[var(--q-nav-link-hover-bg)]'
+									)}
+									href={link.href}
+									onClick={() => setOpen(false)}
+								>
+									{link.label}
+								</Link>
+								{link.hasDropdown && (
+									<div className="grid gap-y-0.5 pl-4 mb-1">
+										{serviceLinks.map((service) => (
+											<Link
+												key={service.href}
+												href={service.href}
+												onClick={() => setOpen(false)}
+												className="flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm text-[var(--q-muted)] hover:text-[var(--q-heading)] hover:bg-[var(--q-nav-link-hover-bg)] transition-colors"
+											>
+												<service.icon className="w-3.5 h-3.5 text-[#3B6BF5] shrink-0" />
+												{service.label}
+											</Link>
+										))}
+									</div>
 								)}
-								href={link.href}
-								onClick={() => setOpen(false)}
-							>
-								{link.label}
-							</Link>
+							</React.Fragment>
 						))}
 					</div>
 					<div className="flex flex-col gap-3">

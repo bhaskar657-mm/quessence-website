@@ -5,11 +5,12 @@ import Footer from "@/components/Footer";
 import ServiceCard from "@/components/ServiceCard";
 import CTASection from "@/components/CTASection";
 import HeroSection from "@/components/HeroSection";
-import HowWeWorkSection from "@/components/HowWeWorkSection";
+
 import { ShineBorder } from "@/components/ui/shine-border";
 import { TestimonialSlider } from "@/components/ui/testimonial-slider-1";
 import { LogoCloud } from "@/components/ui/logo-cloud-2";
 import { Feature108 } from "@/components/ui/shadcnblocks-com-feature108";
+import FAQSection from "@/components/FAQSection";
 
 const services = [
   {
@@ -84,58 +85,48 @@ const stats = [
 const reviews = [
   {
     id: 1,
-    name: "Ashley Right",
-    affiliation: "Pinterest",
+    name: "Michael Calcada",
+    affiliation: "Head of Design, OnLoop",
     quote:
-      "Professionals in their craft! All products were super amazing with strong attention to details, comps and overall vibe.",
-    imageSrc:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=600&fit=crop&q=80",
-    thumbnailSrc:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=120&fit=crop&q=80",
+      "Design files almost identical to the final website. A master of his craft — handled requests, bug fixes, and last-minute changes with ease.",
+    imageSrc: "/clients/photos/Michael-onloop.jpeg",
+    thumbnailSrc: "/clients/photos/Michael-onloop.jpeg",
   },
   {
     id: 2,
-    name: "Jacob Jose",
-    affiliation: "New York Times",
+    name: "Raghuram Reddy Tera",
+    affiliation: "Founder, Cassini",
     quote:
-      "Unlimited, instant access to hundreds of premium quality resources created by designers for designers.",
-    imageSrc:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop&q=80",
-    thumbnailSrc:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=120&fit=crop&q=80",
+      "Comprehensive knowledge of building sleek, engaging websites. A keen eye for detail — highly recommend for any creative web design project.",
+    imageSrc: "/clients/photos/Raghu-cassini.jpeg",
+    thumbnailSrc: "/clients/photos/Raghu-cassini.jpeg",
   },
   {
     id: 3,
-    name: "Elara Sands",
-    affiliation: "Behance",
+    name: "Seshank Vemuru",
+    affiliation: "VP of Sales, North America",
     quote:
-      "The attention to detail is immaculate. Every component feels polished and ready for production.",
-    imageSrc:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=600&fit=crop&q=80",
-    thumbnailSrc:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=120&fit=crop&q=80",
+      "Resourceful, hardworking, and an expert at driving complex projects from the ground up. Perfect for startups and small teams.",
+    imageSrc: "/clients/photos/Seshan-cassini.jpeg",
+    thumbnailSrc: "/clients/photos/Seshan-cassini.jpeg",
   },
   {
     id: 4,
-    name: "Marcus Cole",
-    affiliation: "Dribbble",
+    name: "Sri Vamshi",
+    affiliation: "Founder, Wheedle.io",
     quote:
-      "A true time-saver. I can focus on my core logic instead of pixel-pushing. Highly recommended.",
-    imageSrc:
-      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&h=600&fit=crop&q=80",
-    thumbnailSrc:
-      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&h=120&fit=crop&q=80",
+      "A strategic expert with deep UX understanding. Leads and traffic increased significantly in just one month — invaluable for any startup.",
+    imageSrc: "/clients/photos/Vamshi-wheedle.jpeg",
+    thumbnailSrc: "/clients/photos/Vamshi-wheedle.jpeg",
   },
   {
     id: 5,
-    name: "Serena V.",
-    affiliation: "Figma",
+    name: "Ana Sofia Pinho",
+    affiliation: "Founder, Humankind Works",
     quote:
-      "This is the design system I've been waiting for. It's flexible, accessible, and beautiful.",
-    imageSrc:
-      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=600&fit=crop&q=80",
-    thumbnailSrc:
-      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=100&h=120&fit=crop&q=80",
+      "Their knowledge to craft a website that addresses your audience's pain points is unmatched.",
+    imageSrc: "/clients/photos/anasofiapinho-humankindworks.jpg",
+    thumbnailSrc: "/clients/photos/anasofiapinho-humankindworks.jpg",
   },
 ];
 
@@ -145,14 +136,14 @@ const featuredTabs = [
     icon: <Megaphone className="h-auto w-4 shrink-0" />,
     label: "Content Marketing",
     content: {
-      badge: "3x Follower Growth",
-      title: "Brand Growth for a Premium D2C Label.",
+      badge: "0 → 54.7K Followers",
+      title: "Scaling an AI Creator from Zero to 54.7K on Instagram.",
       description:
-        "Built a full content engine — strategy, production, and distribution — that tripled their social following and doubled inbound leads in 90 days.",
+        "Helped Ravi — a digital creator in the AI & Tech space — build a content strategy that took his Instagram from scratch to 54.7K followers. AI-powered content planning, production, and distribution turned @ravisbook.ai into a go-to voice for learning AI.",
       buttonText: "See Case Study",
-      imageSrc:
-        "https://www.shadcnblocks.com/images/block/placeholder-dark-1.svg",
-      imageAlt: "Content marketing case study",
+      imageSrc: "/clients/casestudies/ravisbook-insta.png",
+      imageAlt: "Ravisbook.ai Instagram growth case study",
+      imageBg: "#000000",
     },
   },
   {
@@ -160,14 +151,14 @@ const featuredTabs = [
     icon: <Globe className="h-auto w-4 shrink-0" />,
     label: "Website Development",
     content: {
-      badge: "42% More Conversions",
-      title: "E-commerce Rebuild for a Health Brand.",
+      badge: "WordPress → Webflow",
+      title: "Digital Overhaul for the Institute for Dental Implantology.",
       description:
-        "Redesigned their Shopify store with conversion-focused layouts, faster load times, and a seamless checkout experience that drove measurable results.",
+        "Migrated IDI from a sluggish WordPress site to a modern Webflow build — responsive design, faster load times, integrated payments, and intuitive navigation that drove more program enquiries.",
       buttonText: "See Case Study",
-      imageSrc:
-        "https://www.shadcnblocks.com/images/block/placeholder-dark-2.svg",
-      imageAlt: "Website development case study",
+      imageSrc: "/clients/casestudies/idi-website.webp",
+      imageAlt: "Institute for Dental Implantology website redesign",
+      imageBg: "#000000",
     },
   },
   {
@@ -175,15 +166,58 @@ const featuredTabs = [
     icon: <Sparkles className="h-auto w-4 shrink-0" />,
     label: "AI Creative Studio",
     content: {
-      badge: "60% Lower Cost",
-      title: "AI-Powered Ad Campaign for a Fintech Startup.",
+      badge: "Knowledge Base AI",
+      title: "Interactive Photo Avatar Trained on a Knowledge Base.",
       description:
-        "Produced a full suite of video ads and product visuals using AI workflows — cinematic quality at a fraction of the traditional production cost.",
+        "Built an interactive AI avatar that turns a static photo into an animated character capable of answering questions from a custom knowledge base — a conversational AI experience your audience can interact with.",
       buttonText: "See Case Study",
-      imageSrc:
-        "https://www.shadcnblocks.com/images/block/placeholder-dark-3.svg",
-      imageAlt: "AI creative studio case study",
+      imageSrc: "",
+      imageAlt: "Interactive photo avatar knowledge base demo",
+      videoId: "hh1kPU8Zfxg",
     },
+  },
+  {
+    value: "tab-4",
+    icon: <Cpu className="h-auto w-4 shrink-0" />,
+    label: "AI Products & Automation",
+    content: {
+      badge: "50% Time Saved",
+      title: "Operations Dashboard for Mark My Zone.",
+      description:
+        "Built a custom admin dashboard that replaced Excel sheets and WhatsApp chaos. The internal team now manages 170+ rental and sales properties in one place — cutting operational time by 50% and eliminating data clutter entirely.",
+      buttonText: "See Case Study",
+      imageSrc: "/clients/casestudies/mmz-dashboard.png",
+      imageAlt: "Mark My Zone admin dashboard case study",
+      imageBg: "#f5f5f7",
+    },
+  },
+];
+
+const homeFaqs = [
+  {
+    question: "What does Quessence actually do?",
+    answer:
+      "We help businesses grow through four integrated services: social media content marketing, website development, AI-powered creative production, and custom AI products & automation. Everything we build runs on AI — that's why we ship faster.",
+  },
+  {
+    question: "How is Quessence different from a traditional agency?",
+    answer:
+      "We're not an agency — we're an AI-first scale-up. No layers of process, no slow approvals. AI is built into every workflow, which means faster delivery, lower costs, and better output. You get a direct line to the people doing the work.",
+  },
+  {
+    question: "What kind of businesses do you work with?",
+    answer:
+      "We work with solopreneurs, startups, mid-size companies, and enterprises. If you're serious about growth and want a team that moves fast, we're a good fit.",
+  },
+  {
+    question: "How long does a typical project take?",
+    answer:
+      "Content marketing is a monthly retainer. Websites typically take 2–6 weeks. AI creative projects can be as fast as a few days. AI product builds vary — we'll scope it together on a call.",
+  },
+  {
+    question: "How do I get started?",
+    answer:
+      "Simple — head to our contact page or book a 15-minute call. We'll learn about your goals, recommend the right approach, and give you a clear picture of what working together looks like. No pressure, no pitch decks.",
   },
 ];
 
@@ -221,6 +255,16 @@ export default function HomePage() {
           </ul>
         </div>
       </section>
+
+      {/* ── Featured Work ── */}
+      <div className="bg-[var(--q-section-bg)]">
+        <Feature108
+          badge="FEATURED WORK"
+          heading="Real projects. Real results."
+          description="See how we've helped brands grow with integrated systems across content, web, creative, and AI."
+          tabs={featuredTabs}
+        />
+      </div>
 
       {/* ── Old Way vs Quessence Way ── */}
       <section className="bg-[var(--q-section-bg)] py-12 sm:py-16 lg:py-20 px-5 sm:px-8 lg:px-16 xl:px-[120px]">
@@ -279,9 +323,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── How We Work ── */}
-      <HowWeWorkSection />
-
       {/* ── Social Proof ── */}
       <section className="bg-[var(--q-section-bg)] py-12 sm:py-16 lg:py-20 px-5 sm:px-8 lg:px-16 xl:px-[120px]">
         <div className="max-w-[1200px] mx-auto flex flex-col items-center gap-16">
@@ -329,20 +370,17 @@ export default function HomePage() {
               <span className="font-semibold text-[#3B6BF5]">collaborate</span>{" "}
               with.
             </h3>
-            <LogoCloud className="max-w-3xl mx-auto" />
+            <LogoCloud className="max-w-5xl mx-auto" />
           </div>
         </div>
       </section>
 
-      {/* ── Featured Work ── */}
-      <div className="bg-[var(--q-section-bg)]">
-        <Feature108
-          badge="FEATURED WORK"
-          heading="Real projects. Real results."
-          description="See how we've helped brands grow with integrated systems across content, web, creative, and AI."
-          tabs={featuredTabs}
-        />
-      </div>
+      {/* ── FAQs ── */}
+      <FAQSection
+        heading="Got questions? We've got answers."
+        subheading="The most common things people ask before working with us."
+        faqs={homeFaqs}
+      />
 
       {/* ── CTA ── */}
       <CTASection

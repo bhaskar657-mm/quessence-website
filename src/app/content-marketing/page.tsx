@@ -114,21 +114,24 @@ const plans = [
   {
     name: "Standard",
     tagline: "For brands getting started",
-    description:
-      "Strategy, content creation, scheduling, analytics, and a dedicated account manager to build your foundation.",
+    deliverables: ["4 Reels / month", "4 Carousels / month", "8 Stories / month"],
+    shoots: "1 shoot visit / month",
+    engagement: "4 hrs engagement & revisions",
   },
   {
     name: "Gold",
     tagline: "For brands ready to grow",
-    description:
-      "Everything in Standard plus more content volume, deeper engagement, and advanced analytics.",
+    deliverables: ["6 Reels / month", "8 Carousels / month", "12 Stories / month"],
+    shoots: "2 shoot visits / month",
+    engagement: "8 hrs engagement & revisions",
     popular: true,
   },
   {
     name: "Platinum",
     tagline: "For brands ready to dominate",
-    description:
-      "Full-scale content engine with maximum output, priority support, and premium creative production.",
+    deliverables: ["10 Reels / month", "8 Carousels / month", "20 Stories / month"],
+    shoots: "2 shoot visits / month",
+    engagement: "12 hrs engagement & revisions",
   },
 ];
 
@@ -211,11 +214,11 @@ export default function ContentMarketingPage() {
                 Every plan includes strategy, content creation, scheduling, analytics, and a dedicated account manager.
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-[800px]">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-[960px]">
               {plans.map((plan) => (
                 <div
                   key={plan.name}
-                  className={`relative bg-[var(--q-card-bg)] border rounded-2xl p-5 sm:p-8 flex flex-col items-center text-center gap-2 ${
+                  className={`relative bg-[var(--q-card-bg)] border rounded-2xl p-5 sm:p-7 flex flex-col gap-4 ${
                     plan.popular
                       ? "border-[#3B6BF5] shadow-lg"
                       : "border-[var(--q-card-border)]"
@@ -227,15 +230,28 @@ export default function ContentMarketingPage() {
                       Most Popular
                     </span>
                   )}
-                  <h3 className="text-[clamp(1.25rem,1rem+1vw,1.5rem)] font-bold text-[var(--q-heading)]">
-                    {plan.name}
-                  </h3>
-                  <p className="text-sm font-medium text-[var(--q-body)]">
-                    {plan.tagline}
-                  </p>
-                  <p className="text-sm text-[var(--q-muted)] leading-relaxed mt-1">
-                    {plan.description}
-                  </p>
+                  <div className="flex flex-col gap-1">
+                    <h3 className="text-[clamp(1.25rem,1rem+1vw,1.5rem)] font-bold text-[var(--q-heading)]">
+                      {plan.name}
+                    </h3>
+                    <p className="text-sm font-medium text-[var(--q-body)]">
+                      {plan.tagline}
+                    </p>
+                  </div>
+                  <div className="h-px bg-[var(--q-divider)]" />
+                  <ul className="flex flex-col gap-2">
+                    {plan.deliverables.map((item) => (
+                      <li key={item} className="flex items-center gap-2 text-sm text-[var(--q-heading)]">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#3B6BF5] shrink-0" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="h-px bg-[var(--q-divider)]" />
+                  <div className="flex flex-col gap-2 text-sm text-[var(--q-body)]">
+                    <span>{plan.shoots}</span>
+                    <span>{plan.engagement}</span>
+                  </div>
                 </div>
               ))}
             </div>

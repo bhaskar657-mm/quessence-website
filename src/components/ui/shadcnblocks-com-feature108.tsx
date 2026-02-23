@@ -10,6 +10,10 @@ interface TabContent {
   buttonText: string;
   imageSrc: string;
   imageAlt: string;
+  /** Background color for the image container (makes it blend with the image) */
+  imageBg?: string;
+  /** YouTube video ID — when provided, renders an embed instead of an image */
+  videoId?: string;
 }
 
 interface Tab {
@@ -65,11 +69,11 @@ const Feature108 = ({
                 value={tab.value}
                 className="grid place-items-center gap-20 lg:grid-cols-2 lg:gap-10"
               >
-                <div className="flex flex-col gap-5">
+                <div className="flex flex-col gap-3">
                   <span className="inline-flex w-fit items-center rounded-full border border-[var(--q-card-border)] bg-[var(--q-badge-bg)] px-3 py-1 text-xs font-semibold text-[var(--q-heading)]">
                     {tab.content.badge}
                   </span>
-                  <h3 className="text-[clamp(1.5rem,0.75rem+3.5vw,3rem)] font-semibold text-[var(--q-heading)]">
+                  <h3 className="text-[clamp(1.25rem,0.85rem+1.75vw,2rem)] font-semibold leading-tight text-[var(--q-heading)]">
                     {tab.content.title}
                   </h3>
                   <p className="text-[var(--q-body)] text-[clamp(1rem,0.95rem+0.25vw,1.125rem)] leading-relaxed">
@@ -77,11 +81,28 @@ const Feature108 = ({
                   </p>
                   <ButtonColorful href="/work" label={tab.content.buttonText} className="mt-2.5 w-fit" />
                 </div>
-                <img
-                  src={tab.content.imageSrc}
-                  alt={tab.content.imageAlt}
-                  className="rounded-xl"
-                />
+                <div
+                  className="aspect-square w-full max-w-md overflow-hidden rounded-xl flex items-center justify-center"
+                  style={tab.content.imageBg ? { backgroundColor: tab.content.imageBg } : undefined}
+                >
+                  {tab.content.videoId ? (
+                    <div className="relative h-full w-full overflow-hidden">
+                      <iframe
+                        src={`https://www.youtube-nocookie.com/embed/${tab.content.videoId}?rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&color=white&playsinline=1&loop=1&playlist=${tab.content.videoId}&autoplay=1&mute=1`}
+                        title={tab.content.imageAlt}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="absolute inset-0 h-[110%] w-[110%] -top-[5%] -left-[5%]"
+                      />
+                    </div>
+                  ) : (
+                    <img
+                      src={tab.content.imageSrc}
+                      alt={tab.content.imageAlt}
+                      className="h-full w-full object-contain"
+                    />
+                  )}
+                </div>
               </TabsContent>
             ))}
           </div>
