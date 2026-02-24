@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.variable} suppressHydrationWarning>
-      <head>
+      <body className="font-primary antialiased bg-[var(--q-page-bg)]">
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-0H42X616ML"
           strategy="afterInteractive"
@@ -45,8 +45,6 @@ export default function RootLayout({
             __html: `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "vm21br7zr1");`,
           }}
         />
-      </head>
-      <body className="font-primary antialiased bg-[var(--q-page-bg)]">
         <StyledComponentsRegistry>
           <ThemeProvider>{children}</ThemeProvider>
           <SpeedInsights />
