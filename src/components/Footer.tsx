@@ -33,10 +33,10 @@ const legalLinks = [
 ];
 
 const socials = [
-  { name: "Instagram", icon: <InstagramLogo weight="fill" size={40} color="#E4405F" /> },
-  { name: "LinkedIn", icon: <LinkedinLogo weight="fill" size={40} color="#0A66C2" /> },
-  { name: "YouTube", icon: <YoutubeLogo weight="fill" size={40} color="#FF0000" /> },
-  { name: "X", icon: <XLogo weight="fill" size={40} className="text-[var(--q-heading)]" /> },
+  { name: "Instagram", href: "https://www.instagram.com/quessence.co/", icon: <InstagramLogo weight="fill" size={40} color="#E4405F" /> },
+  { name: "LinkedIn", href: "https://www.linkedin.com/company/quessence/", icon: <LinkedinLogo weight="fill" size={40} color="#0A66C2" /> },
+  { name: "YouTube", href: "https://www.youtube.com/@quessence_co", icon: <YoutubeLogo weight="fill" size={40} color="#FF0000" /> },
+  { name: "X", href: "https://x.com/Quessence_co", icon: <XLogo weight="fill" size={40} className="text-[var(--q-heading)]" /> },
 ];
 
 export default function Footer() {

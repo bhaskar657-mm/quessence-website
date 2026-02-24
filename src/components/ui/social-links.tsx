@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils"
 interface Social {
   name: string
   icon: React.ReactNode
+  href?: string
 }
 
 interface SocialLinksProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -42,8 +43,12 @@ export function SocialLinks({ socials, className, hoverDirection = "top", ...pro
       className={cn("flex items-center justify-center gap-0", className)}
       {...props}
     >
-      {socials.map((social, index) => (
-        <div
+      {socials.map((social, index) => {
+        const Wrapper = social.href ? "a" : "div"
+        const wrapperProps = social.href ? { href: social.href, target: "_blank", rel: "noopener noreferrer" } : {}
+        return (
+        <Wrapper
+          {...wrapperProps}
           className={cn(
             "relative cursor-pointer transition-opacity duration-200",
             isLeft ? "px-0 py-2" : "px-5 py-2",
@@ -95,8 +100,9 @@ export function SocialLinks({ socials, className, hoverDirection = "top", ...pro
               </motion.div>
             )}
           </AnimatePresence>
-        </div>
-      ))}
+        </Wrapper>
+        )
+      })}
     </div>
   )
 }
