@@ -43,8 +43,8 @@ export default function PricingGuideModal() {
 
       // Trigger PDF download
       const link = document.createElement("a");
-      link.href = "/quessence_content_marketing_plans.pdf";
-      link.download = "Quessence_Content_Marketing_Plans.pdf";
+      link.href = "/Quessence_Pricing_Guide_Light.pdf";
+      link.download = "Quessence_Pricing_Guide.pdf";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -88,8 +88,8 @@ export default function PricingGuideModal() {
               Check your downloads folder for the pricing guide. If it
               didn&apos;t start,{" "}
               <a
-                href="/quessence_content_marketing_plans.pdf"
-                download="Quessence_Content_Marketing_Plans.pdf"
+                href="/Quessence_Pricing_Guide_Light.pdf"
+                download="Quessence_Pricing_Guide.pdf"
                 className="text-[#3B6BF5] font-semibold hover:underline"
               >
                 click here

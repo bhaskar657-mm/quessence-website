@@ -54,7 +54,7 @@ export function SocialLinks({ socials, className, hoverDirection = "top", ...pro
             isLeft ? "px-0 py-2" : "px-5 py-2",
           )}
           style={hoveredSocial && hoveredSocial !== social.name ? { opacity: 0.5 } : { opacity: 1 }}
-          key={index}
+          key={social.name}
           onMouseEnter={() => {
             setHoveredSocial(social.name)
             setRotation(Math.random() * 20 - 10)

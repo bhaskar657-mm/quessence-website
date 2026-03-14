@@ -112,26 +112,26 @@ const processSteps = [
 
 const plans = [
   {
-    name: "Standard",
-    tagline: "For brands getting started",
+    name: "Growth",
+    tagline: "For early-stage brands building their first organic presence",
     deliverables: ["4 Reels / month", "4 Carousels / month", "8 Stories / month"],
-    shoots: "1 shoot visit / month",
-    engagement: "4 hrs engagement & revisions",
+    shoots: "1 shoot / month",
+    engagement: "1 review call / month",
   },
   {
-    name: "Gold",
-    tagline: "For brands ready to grow",
-    deliverables: ["6 Reels / month", "8 Carousels / month", "12 Stories / month"],
-    shoots: "2 shoot visits / month",
-    engagement: "8 hrs engagement & revisions",
+    name: "Scale",
+    tagline: "For growing brands ready to scale with higher volume",
+    deliverables: ["6 Reels / month", "6 Carousels / month", "12 Stories / month"],
+    shoots: "2 shoots / month",
+    engagement: "2 review calls / month",
     popular: true,
   },
   {
-    name: "Platinum",
-    tagline: "For brands ready to dominate",
-    deliverables: ["10 Reels / month", "8 Carousels / month", "20 Stories / month"],
-    shoots: "2 shoot visits / month",
-    engagement: "12 hrs engagement & revisions",
+    name: "Premium",
+    tagline: "For established brands demanding maximum output",
+    deliverables: ["8 Reels / month", "8 Carousels / month", "16 Stories / month"],
+    shoots: "2 shoots / month",
+    engagement: "4 review calls / month",
   },
 ];
 

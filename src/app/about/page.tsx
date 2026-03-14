@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Users, Target, Eye, Cpu, Layers, CheckCircle } from "lucide-react";
 import { Header } from "@/components/ui/header-2";
 import Footer from "@/components/Footer";
@@ -68,8 +69,8 @@ const clientTypes = [
 ];
 
 const teamMembers = [
-  { name: "Co-Founder", title: "Strategy & Growth" },
-  { name: "Co-Founder", title: "Technology & AI" },
+  { name: "Co-Founder", title: "Strategy & Growth", image: "/team/jay.png" },
+  { name: "Co-Founder", title: "Technology & AI", image: "/team/bhaskar.png" },
 ];
 
 export default function AboutPage() {
@@ -233,7 +234,14 @@ export default function AboutPage() {
                   className="bg-[var(--q-card-bg)] border border-[var(--q-card-border)] rounded-2xl overflow-hidden"
                   style={{ boxShadow: "var(--q-card-shadow)" }}
                 >
-                  <div className="w-full h-[220px] sm:h-[260px] bg-[var(--q-divider)]" />
+                  <div className="w-full h-[220px] sm:h-[260px] relative overflow-hidden bg-[var(--q-divider)]">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      className="object-cover object-top"
+                    />
+                  </div>
                   <div className="p-5 sm:p-6 flex flex-col gap-1 text-center">
                     <span className="text-lg font-bold text-[var(--q-heading)]">
                       {member.name}

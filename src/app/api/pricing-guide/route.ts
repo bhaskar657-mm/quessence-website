@@ -23,18 +23,18 @@ export async function POST(request: Request) {
       );
     }
 
-    // Insert into Supabase
-    const supabase = getSupabase();
-    const { error: dbError } = await supabase
-      .from("pricing_guide_downloads")
-      .insert({ name: name.trim(), email: email.trim() });
+    // Insert into Supabase (best-effort — don't block the download)
+    try {
+      const supabase = getSupabase();
+      const { error: dbError } = await supabase
+        .from("pricing_guide_downloads")
+        .insert({ name: name.trim(), email: email.trim() });
 
-    if (dbError) {
-      console.error("Supabase insert error:", dbError);
-      return NextResponse.json(
-        { error: "Failed to process your request. Please try again." },
-        { status: 500 }
-      );
+      if (dbError) {
+        console.error("Supabase insert error:", dbError);
+      }
+    } catch (dbErr) {
+      console.error("Supabase connection error:", dbErr);
     }
 
     // Send email notification (best-effort)
