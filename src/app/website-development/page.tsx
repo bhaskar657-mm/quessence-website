@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import {
   Globe,
   LayoutTemplate,
@@ -16,7 +15,6 @@ import Footer from "@/components/Footer";
 import SectionTag from "@/components/SectionTag";
 import ServiceCard from "@/components/ServiceCard";
 import ProcessSteps from "@/components/ProcessSteps";
-import TestimonialSection from "@/components/TestimonialSection";
 import CTASection from "@/components/CTASection";
 import { ButtonColorful } from "@/components/ui/button-colorful";
 
@@ -130,12 +128,6 @@ export default function WebsiteDevelopmentPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4 w-full sm:w-auto items-center">
               <ButtonColorful href="/contact" label="Book a Free Consultation" className="h-12 px-7 text-[clamp(0.875rem,0.825rem+0.2vw,1rem)] w-full sm:w-auto" />
-              <Link
-                href="/work"
-                className="text-[clamp(0.875rem,0.825rem+0.2vw,1rem)] font-semibold px-7 py-3 rounded-full border border-[var(--q-hero-btn-border)] text-[var(--q-hero-btn-text)] hover:border-[var(--q-hero-btn-hover-border)] w-full sm:w-auto text-center"
-              >
-                View Our Work
-              </Link>
             </div>
           </div>
         </section>
@@ -170,12 +162,6 @@ export default function WebsiteDevelopmentPage() {
           headline="From concept to launch."
           description="A five-phase process designed for speed, quality, and zero surprises."
           steps={processSteps}
-        />
-
-        {/* Testimonial */}
-        <TestimonialSection
-          quote="Quessence rebuilt our entire Webflow site in three weeks. The new design increased our lead conversion by 40% in the first month. They understood our brand from day one."
-          author="— Head of Marketing, SaaS Company"
         />
 
         {/* CTA */}

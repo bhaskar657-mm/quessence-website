@@ -204,8 +204,6 @@ export default function BlogPage() {
           headline="Want to stay in the loop?"
           subheadline="Follow us for more insights on content, AI, and brand growth."
           primaryLabel="Get in touch"
-          secondaryLabel="See Our Work"
-          secondaryHref="/work"
         />
       </main>
 

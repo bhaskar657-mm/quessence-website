@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import HeroWave from "@/components/ui/dynamic-wave-canvas-background";
@@ -40,13 +39,7 @@ export default function HeroSection() {
 
           {/* CTA */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4 w-full sm:w-auto items-center">
-            <ButtonColorful href="/work" label="See Our Work" className="h-12 px-7 text-[clamp(0.875rem,0.825rem+0.2vw,1rem)] w-full sm:w-auto" />
-            <Link
-              href="/contact"
-              className="text-[clamp(0.875rem,0.825rem+0.2vw,1rem)] font-semibold px-7 py-3 rounded-full border border-[var(--q-hero-btn-border)] text-[var(--q-hero-btn-text)] hover:border-[var(--q-hero-btn-hover-border)] w-full sm:w-auto text-center"
-            >
-              Let&apos;s Talk
-            </Link>
+            <ButtonColorful href="/contact" label="Let's Talk" className="h-12 px-7 text-[clamp(0.875rem,0.825rem+0.2vw,1rem)] w-full sm:w-auto" />
           </div>
         </div>
       </div>

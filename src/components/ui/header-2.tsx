@@ -46,7 +46,6 @@ export function Header() {
 	const links = [
 		{ label: 'About', href: '/about' },
 		{ label: 'Services', href: '/#services', hasDropdown: true },
-		{ label: 'Work', href: '/work' },
 		{ label: 'Blog', href: '/blog' },
 		{ label: 'Contact', href: '/contact' },
 	];

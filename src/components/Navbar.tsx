@@ -100,10 +100,6 @@ export default function Navbar() {
             </div>
           </MenuItem>
 
-          <Link href="/work">
-            <MenuItem setActive={setActive} active={active} item="Work" />
-          </Link>
-
           <Link href="/contact">
             <MenuItem setActive={setActive} active={active} item="Contact" />
           </Link>

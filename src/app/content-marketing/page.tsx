@@ -18,7 +18,6 @@ import Footer from "@/components/Footer";
 import SectionTag from "@/components/SectionTag";
 import ServiceCard from "@/components/ServiceCard";
 import ProcessSteps from "@/components/ProcessSteps";
-import TestimonialSection from "@/components/TestimonialSection";
 import CTASection from "@/components/CTASection";
 import { ButtonColorful } from "@/components/ui/button-colorful";
 import PricingGuideModal from "@/components/PricingGuideModal";
@@ -160,12 +159,6 @@ export default function ContentMarketingPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4 w-full sm:w-auto items-center">
               <ButtonColorful href="/contact" label="Get Started" className="h-12 px-7 text-[clamp(0.875rem,0.825rem+0.2vw,1rem)] w-full sm:w-auto" />
-              <Link
-                href="/work"
-                className="text-[clamp(0.875rem,0.825rem+0.2vw,1rem)] font-semibold px-7 py-3 rounded-full border border-[var(--q-hero-btn-border)] text-[var(--q-hero-btn-text)] hover:border-[var(--q-hero-btn-hover-border)] w-full sm:w-auto text-center"
-              >
-                View Our Work
-              </Link>
             </div>
           </div>
         </section>
@@ -278,12 +271,6 @@ export default function ContentMarketingPage() {
             </p>
           </div>
         </section>
-
-        {/* Testimonial */}
-        <TestimonialSection
-          quote="We went from 2,000 to 18,000 Instagram followers in six months. The content quality and consistency Quessence delivers is unmatched. They don't just post — they build a brand."
-          author="— Founder, Fashion Brand"
-        />
 
         {/* CTA */}
         <CTASection

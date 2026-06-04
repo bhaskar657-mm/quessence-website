@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import {
   Cpu,
   Code,
@@ -20,7 +19,6 @@ import SectionTag from "@/components/SectionTag";
 import ServiceCard from "@/components/ServiceCard";
 import ProcessSteps from "@/components/ProcessSteps";
 import PricingCTA from "@/components/PricingCTA";
-import TestimonialSection from "@/components/TestimonialSection";
 import CTASection from "@/components/CTASection";
 import { ButtonColorful } from "@/components/ui/button-colorful";
 
@@ -163,12 +161,6 @@ export default function AIProductsAutomationPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4 w-full sm:w-auto items-center">
               <ButtonColorful href="/contact" label="Book a Consultation" className="h-12 px-7 text-[clamp(0.875rem,0.825rem+0.2vw,1rem)] w-full sm:w-auto" />
-              <Link
-                href="/work"
-                className="text-[clamp(0.875rem,0.825rem+0.2vw,1rem)] font-semibold px-7 py-3 rounded-full border border-[var(--q-hero-btn-border)] text-[var(--q-hero-btn-text)] hover:border-[var(--q-hero-btn-hover-border)] w-full sm:w-auto text-center"
-              >
-                View Our Work
-              </Link>
             </div>
           </div>
         </section>
@@ -249,17 +241,10 @@ export default function AIProductsAutomationPage() {
           description="We scope and price each engagement individually based on complexity, timeline, and business impact. Book a free consultation and we'll provide a detailed proposal within one week."
         />
 
-        {/* Testimonial */}
-        <TestimonialSection
-          quote="Quessence built us a custom booking PWA that replaced three separate tools. Our team saves 15 hours a week, and our customers love the seamless experience. They thought about problems we hadn't even considered."
-          author="— COO, Service Company"
-        />
-
         {/* CTA */}
         <CTASection
           headline="Ready to build something intelligent?"
           subheadline="Let's turn your business problems into digital products."
-          secondaryLabel="View Our Work"
         />
       </main>
 

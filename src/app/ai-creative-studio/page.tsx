@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import {
   Sparkles,
   Film,
@@ -21,7 +20,6 @@ import SectionTag from "@/components/SectionTag";
 import ServiceCard from "@/components/ServiceCard";
 import ProcessSteps from "@/components/ProcessSteps";
 import PricingCTA from "@/components/PricingCTA";
-import TestimonialSection from "@/components/TestimonialSection";
 import CTASection from "@/components/CTASection";
 import { ButtonColorful } from "@/components/ui/button-colorful";
 
@@ -164,13 +162,7 @@ export default function AICreativeStudioPage() {
               infinitely scalable.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4 w-full sm:w-auto items-center">
-              <ButtonColorful href="/work" label="See Our Work" className="h-12 px-7 text-[clamp(0.875rem,0.825rem+0.2vw,1rem)] w-full sm:w-auto" />
-              <Link
-                href="/contact"
-                className="text-[clamp(0.875rem,0.825rem+0.2vw,1rem)] font-semibold px-7 py-3 rounded-full border border-[var(--q-hero-btn-border)] text-[var(--q-hero-btn-text)] hover:border-[var(--q-hero-btn-hover-border)] w-full sm:w-auto text-center"
-              >
-                Book a Consultation
-              </Link>
+              <ButtonColorful href="/contact" label="Book a Consultation" className="h-12 px-7 text-[clamp(0.875rem,0.825rem+0.2vw,1rem)] w-full sm:w-auto" />
             </div>
           </div>
         </section>
@@ -252,17 +244,10 @@ export default function AICreativeStudioPage() {
           description="We scope and price each project individually based on format, volume, complexity, and timeline. Book a free consultation and we'll put together a custom proposal within 48 hours."
         />
 
-        {/* Testimonial */}
-        <TestimonialSection
-          quote="We needed product photography for 200+ SKUs. Quessence delivered studio-quality images using AI in two weeks — what would have taken months with a traditional studio. The quality blew us away."
-          author="— CEO, E-Commerce Brand"
-        />
-
         {/* CTA */}
         <CTASection
           headline="Ready to create something extraordinary?"
           subheadline="Let's produce studio-quality creative at AI speed."
-          secondaryLabel="View Our Work"
         />
       </main>
 

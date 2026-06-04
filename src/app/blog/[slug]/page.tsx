@@ -184,8 +184,6 @@ export default async function BlogPostPage({ params }: Props) {
           headline="Ready to build something that lasts?"
           subheadline="Whether you need content, a website, AI-powered creative, or a custom-built product — it starts with a conversation."
           primaryLabel="Get in touch"
-          secondaryLabel="See Our Work"
-          secondaryHref="/work"
         />
       </main>
 

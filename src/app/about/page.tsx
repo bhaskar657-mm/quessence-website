@@ -260,8 +260,6 @@ export default function AboutPage() {
         <CTASection
           headline="Ready to work with a team that gets it?"
           subheadline="Let's build something that lasts."
-          secondaryLabel="See Our Work"
-          secondaryHref="/work"
         />
       </main>
 

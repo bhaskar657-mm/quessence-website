@@ -16,7 +16,7 @@ export default function CTASection({
   primaryLabel = "Book a Consultation",
   primaryHref = "/contact",
   secondaryLabel,
-  secondaryHref = "/work",
+  secondaryHref = "/contact",
 }: CTASectionProps) {
   return (
     <section className="bg-[var(--q-section-bg)] py-12 sm:py-16 lg:py-20 px-5 sm:px-8 lg:px-16 xl:px-[120px]">
